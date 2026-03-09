@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>软考出题系统</title>
+</head>
+
+<body>
+
+<h1>软考出题系统</h1>
+
+<button onclick="randomQuestion()">一键出题</button>
+
+<div id="question"></div>
+
+<script>
+
+    const questions = [
+        {
+            q:"WBS属于什么管理？",
+            a:"A 范围管理",
+            b:"B 成本管理",
+            c:"C 质量管理",
+            d:"D 风险管理",
+            answer:"A"
+        },
+
+        {
+            q:"项目整合管理的核心是什么？",
+            a:"A 项目章程",
+            b:"B 项目计划",
+            c:"C 项目监控",
+            d:"D 项目沟通",
+            answer:"A"
+        }
+    ]
+
+    function randomQuestion(){
+
+        const q = questions[Math.floor(Math.random()*questions.length)]
+
+        document.getElementById("question").innerHTML =
+            `
+<p>${q.q}</p>
+<p>${q.a}</p>
+<p>${q.b}</p>
+<p>${q.c}</p>
+<p>${q.d}</p>
+`
+
+    }
+
+</script>
+
+</body>
+</html>
